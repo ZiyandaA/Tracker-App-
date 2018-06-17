@@ -1,0 +1,38 @@
+<html>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    type="text/javascript"
+    src="/javascripts/trackerHandler.js"
+  >
+
+  </script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script
+  type="text/javascript"
+  src="/javascripts/home.js"
+>
+
+</script>
+  <script
+  type="text/javascript"
+  src="/javascripts/config.js"
+>
+</script>
+
+</html>
+<body>
+    <% include ./templates/header.ejs %>
+    <div class="container">
+        <div id="information">
+          <span>
+              *
+          </span>
+          
+        </div>
+          <% include ./templates/trackers.ejs %>
+    </div>
+  
+</body>

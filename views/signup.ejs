@@ -1,0 +1,23 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/signUp.js"></script>
+    <script type="text/javascript" src="/javascripts/config.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</html>
+<body>
+    <% include ./templates/header.ejs %>
+    <div class="container">
+        <div>
+            <input id="username" type="text" placeholder="input username">
+            <input id="password" placeholder="input password" type="password">
+            <button
+                id="signUpButton"
+            >signUp</button>
+        </div>
+        <div id="error"></div>
+        <button id="button1">test</button>
+        
+    </div>
+    
+</body>
