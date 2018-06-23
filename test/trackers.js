@@ -72,6 +72,4 @@ describe('Trackers', () => {
 
 })
 
-//1) Trackers:
-//  a) /GET trackers
 

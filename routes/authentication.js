@@ -17,7 +17,7 @@ router.post('/signup', function(req, res, next) {
   var username = req.body.username;
   var password = hashThePassword(req.body.password);
   authValidator.asAuth(req.body);
-  console.log(req.body, 'this is body')
+  console.log(req.body, 'this is the body')
 
   console.log(username, 'username', password, 'password');
   if (!username || password.length < 5) {
@@ -57,7 +57,7 @@ router.post('/signin', (req, res, next) => {
 })
 
 router.post('/logout', (req, res, next) => {
-  console.log('something');
+  // console.log('something');
   if (req.session.user) {
     req.session.destroy(() => {
       res.send({destroyed: true})

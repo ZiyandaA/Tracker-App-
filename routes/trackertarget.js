@@ -20,21 +20,53 @@ router.post('/', (req, res, next) => {
     var name = req.body.name;
     var target = req.body.target;
     var value = req.body.value;
+    var targetID = req.body.targetID;
 
-    
-    models.TrackerTarget.create({
-        trackerID: trackerID,
-        name: name,
-        target: target,
-        value: value,
-        date: Date.now(),
-    })
-    .then(tracktarget => {
-        res.send(tracktarget);
-    })
-    .catch(err => {
-        next(err);
+    if(targetID) {
+        console.log("UPDATE ID: " + targetID);
+        models.TrackerTarget.updateOne({
+                _id: targetID
+            }, {
+            trackerID: trackerID,
+            name: name,
+            target: target,
+            value: value,
+            date: Date.now(),
+        })
+        .then(tracktarget => {
+            res.send(tracktarget);
+        })
+        .catch(err => {
+            next(err);
+        })
+
+    }
+    else {
+        models.TrackerTarget.create({
+            trackerID: trackerID,
+            name: name,
+            target: target,
+            value: value,
+            date: Date.now(),
+        })
+        .then(tracktarget => {
+            res.send(tracktarget);
+        })
+        .catch(err => {
+            next(err);
+        })
+    }
+})
+
+router.delete("/:id", (req, res, next) => {
+    // delete the tracker
+    models.TrackerTarget.findById(req.params.id)
+    .remove()
+    .exec()
+    .then(data => {
+        res.send(data);
     })
 })
+
 
 module.exports = router;

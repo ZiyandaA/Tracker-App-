@@ -1,25 +1,26 @@
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/javascripts/signIn.js"></script>
     <script type="text/javascript" src="/javascripts/config.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
-</html>
+  </head>
 <body>
     <% include ./templates/header.ejs %>
     <div class="container">
-        <div>
-            <input id="username" type="text" placeholder="input username">
-            <input id="password" placeholder="input password" type="password">
+        <div class="box">
+            <input id="username" aria-label="username" type="text" placeholder="input username">
+            <input id="password" aria-label="password" placeholder="input password" type="password">
             <button
-                id="signin-button"
-            >
-                signin
-            </button>
-        </div>
-        <div id="error"></div>
-        <button id="button1">test</button>
+                id="signin-button" aria-label="sign in" role="button"
+            >Signin</button>
+    </div>
+    <div id="error"></div>
         
     </div>
     
 </body>
+</html>

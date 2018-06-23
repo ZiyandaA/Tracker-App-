@@ -7,7 +7,7 @@ exports.asAuth = (data) => {
     })
 
     if(Joi.validate(data, schema).error) {
-        throw new Error('whrong params');
+        throw new Error('wrong params');
     }
 }
 

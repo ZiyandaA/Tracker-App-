@@ -24,7 +24,7 @@ router.delete('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  console.log(req.body, 'this is body')
+  // console.log(req.body, 'this is body')console.log(req.body, 'this is body')
   User.create({
     username: req.body.username,
     password: req.body.password

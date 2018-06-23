@@ -6,7 +6,6 @@ var logger = require('morgan');
 var HTTPError = require('./utils/Errors/HTTPError');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var puppyRouter = require('./routes/puppy');
 var authRouter = require('./routes/authentication');
 var trackerRouter = require('./routes/tracker');
 var findMeRouter = require('./routes/findMe');
@@ -50,7 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/puppys',puppyRouter);
 app.use('/auth', authRouter);
 app.use('/trackers', trackerRouter);
 app.use('/trackertargets', trackerTargetRouter);
