@@ -1,5 +1,5 @@
 function getTrackers(id) {
-    return fetch('http://localhost:3000/trackers?user_id=' + id)
+    return fetch('http://localhost:3000/users/' + id)
         .then(data => {
             return data.json();
         })

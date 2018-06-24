@@ -158,12 +158,29 @@ th {
   margin-left: auto;
 }
 
-@media screen and (max-width: 1024) {
-  .container {
-    text-align: center;
-    color: green;
+@media screen and (max-width: 1024px) {
+  #password, #username {
+    height: 50px;
   }
-  html {
-    background: white;
+}
+
+@media screen and (max-width: 700px) and (min-width: 300px) {
+  .app-name {
+    font-size: 15px;
+    text-align: left;
+    display: block;
   }
+  #login-container > a:link, #login-container > a:visited, #logout-container > button {
+    /* align-content:  right; */
+    background-color: #1461bf;
+    color: white;
+    padding: 8px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    /* float:right; */
+ } 
+ #login-container {
+   padding: 0;
+ }
 }

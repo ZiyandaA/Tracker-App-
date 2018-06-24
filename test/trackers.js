@@ -31,26 +31,6 @@ describe('Trackers', () => {
         })
     });
 
-    describe('/POST tracker',() => {
-        it('should post tracker', done => {
-            let tracker = {
-                userID: "5b0ca0cf007cce814b631440",
-                name: "drinks"
-            };
-            chai.request(server)
-                .post('/trackers')
-                .send(tracker)
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.have.property('userID');
-                    res.body.should.be.a('object');
-                    res.body.should.have.property('name');
-
-                })
-                done();
-        })
-    });
-
     describe('/POST wrong tracker',() => {
         it('should not post tracker', done => {
             let tracker = {
@@ -65,7 +45,7 @@ describe('Trackers', () => {
                     res.body.should.have.property('err');
                     res.body.should.be.a('object');
 
-                })
+                });
                 done();
         })
     });

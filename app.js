@@ -16,12 +16,14 @@ var mongoose = require('mongoose');
 var cors = require('cors')
 var db_host;
 if (process.env.NODE_ENV === "test") {
-  db_host = "test";
+  db_host = "mongodb+srv://cluster0-g2pzb.mongodb.net/test";
+  mongoose.connect(db_host, {user: 'Ziyanda', pass: 'ziyanda'});
 }
 else {
-  db_host = "mydb"
+  db_host = "mongodb://localhost/mydb";
+  mongoose.connect(db_host);
 }
-mongoose.connect('mongodb://localhost/' + db_host);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
