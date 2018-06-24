@@ -16,8 +16,8 @@ var mongoose = require('mongoose');
 var cors = require('cors')
 var db_host;
 if (process.env.NODE_ENV === "test") {
-  db_host = "mongodb+srv://cluster0-g2pzb.mongodb.net/test";
-  mongoose.connect(db_host, {user: 'Ziyanda', pass: 'ziyanda'});
+  db_host = "mongodb://localhost/test";
+  mongoose.connect(db_host);
 }
 else {
   db_host = "mongodb://localhost/mydb";
